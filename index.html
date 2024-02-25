@@ -48,6 +48,16 @@
     </div>
 
     <script>
+
+        const {Storage} = require('@google-cloud/storage');
+        const projectID = '105309437936448906498'
+        const bucketName = 'configuration_file_bucket'
+        const keyFileName = 'acquired-router-415412-48dc24fcbad7'
+
+        const storage = new Storage(projectID, keyFileName);
+
+
+
         /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
         function myFunction() {
             var x = document.getElementById("myLinks");
@@ -64,41 +74,20 @@
             document.getElementById('fileInput').click();
         }
 
-        function uploadFile() {
+        async function uploadFile() {
             // Retrieve the selected file from the input
             var fileInput = document.getElementById('fileInput');
             var file = fileInput.files[0];
 
             if (file) {
-                var formData = new FormData();
-                formData.append('file', file);
-
-                fetch('YOUR_UPLOAD_ENDPOINT', {
-                    method: 'POST',
-                    body: formData,
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Once the file is uploaded, data.url will contain the URL of the uploaded file
-                    fetch('YOUR_RAY_TRACING_ENDPOINT', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ fileUrl: data.url }),
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Display the processed image in the 'renderedImage' div
-                        document.getElementById('renderedImage').innerHTML = `<img src="${data.imageUrl}" alt="Ray Traced Image">`; 
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+                try{
+                    const bucket = storage.bucket(bucketName);
+                    const ret = await bucket.upload(file);
+                    console.log(ret);
+                     return ret;
+                }catch(error){
+                    console.error('Error',error);
+                }
             } else {
                 alert('Please select a file to upload.');
             }
