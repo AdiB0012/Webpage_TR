@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "acquired-router-415412",
+  "private_key_id": "48dc24fcbad7d020dece832b6f247d5c6a496b34",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCr3wtlJFXwXN8K\nRervf49KV6gxp2DA/0FPRqMDepUZYxzl9UOFsB98yhXibXqf2i/iRqnNEWFWm0+I\nxuZT9GOmRAhj//XuC7hQii30ZbNcW1+oSRW6ITvVsmDwP5ygH9cG0+d9LLMVk06I\nh5WM+x0Wir9dFSjk+M0I/r1VlW6IMHvi3qdFdO7rMf3dqtzCokqVG+7aY1bJcq/z\nkXFqJ1I3oL6iKPZx7+2YMKyShJAkrhfnF5BgVW9AQ/5g2ndwW5b+GdIRq2g2ATDp\nRoyTznXd0BpYXPUo7t0j/rSAfRt55PsbLpE/ptphZmOYiqj3V0ZF5ZmvDWUtXYxd\nld/G+qZ3AgMBAAECggEADOliFl4T14CfZn3497cSHhg87Xk3WChht3S4bsMSjAHm\nVaw52Pak1uyDlytF7z5ZiVrPpM7UDJXF9G6+absBXw5087Y/iBUsHcWggCzBVbd5\n/AJJj8SxYkA9VUi7s0sEQPuoXb7Lt8I4plV+Bni5Wn+TGSLezwMviNtCTZ/Yc7Vs\nLwhJ+pQNiDhjWb8eSFX2CMMl3TU+KQLZfZfQIHiRTp4FogRxABRaYlvFxPgfcteI\n/CiPfkLmdUAAMKEKywn00L929ZWU6F86KMCJwfBegIRJP7qNN3/rVeGiBZ58vy2c\nZir8e8NLMpW1al+EbmOcqFm/eU8sH/iyF8XPKHoNsQKBgQDtBs/nIdSVKah9HpC7\nweq+BKD9rRyNuQbIIPBpRtd+1TK+uEtQF2RClOagteH/MYrdz6JaMh21tUjnGLsY\nfO0VWEvw4ctljgELeYx0cHhUm8+Y2NLvumhQWX/C5OfDTgF4gVoKSfAPjf8VoTLr\nrVRwjS0fZBbld2uNltHLyhpi/wKBgQC5oQ76jxywg4JkLC1LGK9lx2ZkRLYEpkEe\nEuQ0hJJcmAgNc48voPjg2s6UOIIZPrso2D5E9PLv/w4RT5u+3rgG24XegwfzCfSD\nUpKU4l2FjgWHz0/xoPcxjB9WZS3KL6fMZ+yz8y2DUOWgAzY7iqv6MaTCY2jGcyY/\nmisY6aBUiQKBgAv4oht8W+5EslvPZWP2QVLjjPYC/kQyKiOFdl760vt27R8w06zx\n4YBzYMqRJR7sc6UMTZjcmx+ITmxNlXWBKcBAO2WpIcq5R1g7BVsEKy+qxutjWBP/\niDE2s/s18Hauw+hAMDoAzf0bIN0IzTeWA4PDvZmuRnHEfEwkZ+gxBvAlAoGBAKH4\nRnmaJg5esYd2hI7iGylTs6QJ0Eh+SJNVKIoqowroHR6flnCYpJCOW3I5XEtq0SPy\ni2Lf2JpQkpXIQL1q2GgjY8ujyWvnY9KyWfRPEAtYwLqfycGsEgTJnw5jenDQ5DkW\n9RKPPUc3byUPqGKLvUOxzXFQDDwcfWNBwhkawSsBAoGAdJE52qr7DslrnfGSZtVN\nwH/k4aZvlv4mhwDZbbcJdGWMHSsA9fnBSFKXs86WG8M0ipcqtoPiy3zGoden827u\n6lbM7cUZx/8iIA2cg6SdBOTK8CtQGJ0/pATVoegox++d+VHHD0+V4Zqccd5OY35w\ntRiBjr2VXUfLFvKMppjtXb4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "adiebobocoding@acquired-router-415412.iam.gserviceaccount.com",
+  "client_id": "105309437936448906498",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adiebobocoding%40acquired-router-415412.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
