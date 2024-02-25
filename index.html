@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ray Tracing App</title>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+          <div class="container nav-container">
+              <input class="checkbox" type="checkbox" name="" id="" />
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>  
+            <div class="logo">
+              <h1>Trace the Ray</h1>
+            </div>
+            <div class="menu-items">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">blogs</a></li>
+              <li><a href="#">portfolio</a></li>
+              <li><a href="#">contact</a></li>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+
+        <!-- Button to trigger file chooser -->
+        <button class="btn btn-primary mt-3" onclick="chooseFile()">Choose File</button>
+
+        <!-- Input for uploading a file (hidden by default) -->
+        <input type="file" id="fileInput" accept=".yaml, .obj" style="display: none">
+
+        <!-- Button to trigger file upload and ray tracing -->
+        <button class="btn btn-primary mt-3" onclick="uploadFile()">Trace Rays</button>
+
+        <!-- Display area for the processed image -->
+        <div id="renderedImageContainer" class="col-md-4">
+            <img src="origin.png" style="width: 800px; height: 100%;" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+
+    <script>
+        /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        // JavaScript logic for file chooser, file upload, and ray tracing
+
+        function chooseFile() {
+            document.getElementById('fileInput').click();
+        }
+
+        function uploadFile() {
+            // Retrieve the selected file from the input
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+
+            if (file) {
+                var formData = new FormData();
+                formData.append('file', file);
+
+                fetch('YOUR_UPLOAD_ENDPOINT', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Once the file is uploaded, data.url will contain the URL of the uploaded file
+                    fetch('YOUR_RAY_TRACING_ENDPOINT', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ fileUrl: data.url }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Display the processed image in the 'renderedImage' div
+                        document.getElementById('renderedImage').innerHTML = `<img src="${data.imageUrl}" alt="Ray Traced Image">`; 
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            } else {
+                alert('Please select a file to upload.');
+            }
+        }
+    </script>
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
